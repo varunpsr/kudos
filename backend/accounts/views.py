@@ -3,7 +3,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import api_view, permission_classes
-from .serializers import UserRegistrationSerializer
+from .serializers import UserRegistrationSerializer, UserListSerializer
+from django.contrib.auth.models import User
 
 
 @api_view(['POST', ])
@@ -26,3 +27,11 @@ def logout(request):
         except (AttributeError, Exception):
             pass
         return Response(status=status.HTTP_200_OK)
+
+@api_view(['GET',])
+@permission_classes([permissions.IsAuthenticated])
+def list_users(request):
+    user = request.user
+    users = User.objects.all().exclude(id=user.id)
+    serializer = UserListSerializer(users, many=True)
+    return Response(data=serializer.data, status=status.HTTP_200_OK)

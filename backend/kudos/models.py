@@ -19,6 +19,9 @@ class Kudos(models.Model):
     class Meta:
         verbose_name = _("kudos")
         verbose_name_plural = _("kudos")
+        indexes = [
+            models.Index(fields=['week_year', 'from_user']),
+        ]
 
     def __str__(self):
         return self.body
