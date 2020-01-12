@@ -44,9 +44,9 @@ class Kudos extends React.Component {
         return this.state.kudos.map((item, index) => (
             <div key={index}>
                 <CardGroup style={{ paddingTop: 20, paddingLeft: 10, paddingRight: 10, alignContent: 'center' }}>
-                    <Card style={{ paddingLeft: 20, paddingRight: 20, paddingTop: 20 }}>
+                    <Card style={{ paddingLeft: 20, paddingRight: 20 }}>
                         <Card.Body>
-                            <Card.Title style={{ flexWrap: "wrap", width: 200 }} > <b> {item.from_user.user.username} </b> </Card.Title>
+                            <Card.Title style={{ flexWrap: "wrap", width: 200 }} > To: <b> {item.to_user.full_name} </b> </Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">{new Date(item.created_date).toDateString()}</Card.Subtitle>
                             <Card.Text>
                                 {item.body}
@@ -77,13 +77,13 @@ class Kudos extends React.Component {
                         </div>
                     </div>
                 ) : (
-                        <div style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', flexWrap: "wrap" }}>
+                        <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', flexWrap: "wrap", alignItems: "center" }}>
                             {this.alldata()}
                         </div>
                     )}
 
             </div>
-        )
+        );
     };
 }
 

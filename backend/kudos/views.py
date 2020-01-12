@@ -1,5 +1,4 @@
 from rest_framework import status
-from django.db.models import Q
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import api_view, permission_classes
@@ -21,7 +20,7 @@ def kudos_list(request):
         error = {}
         return Response(data="User Profile does not exist.", status=status.HTTP_400_BAD_REQUEST)
     if request.method == 'GET':
-        kudos = Kudos.objects.filter(Q(from_user=profile) | Q(to_user=profile))
+        kudos = Kudos.objects.filter(from_user=profile)
         serializer = KudosListSerializer(kudos, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     if request.method == 'POST':
@@ -32,3 +31,21 @@ def kudos_list(request):
             serializer.save()
             return Response(data=serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET' ])
+@permission_classes([permissions.IsAuthenticated])
+def kudos_received_list(request):
+    """[summary]
+    Get list of Kudos received by current logged in user
+    """
+    user = request.user
+    try:
+        profile = UserProfile.objects.get(user=user)
+    except UserProfile.DoesNotExist:
+        error = {}
+        return Response(data="User Profile does not exist.", status=status.HTTP_400_BAD_REQUEST)
+    if request.method == 'GET':
+        kudos = Kudos.objects.filter(to_user=profile)
+        serializer = KudosListSerializer(kudos, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

@@ -41,7 +41,7 @@ class Login extends React.Component {
     render() {
         return (
             !this.props.token ? (
-                <div style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', width: '100%', height: '50%', margin: '5px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', width: '100%', height: '50%', margin: '5px' }}>
                     <div style={{ display: 'flex', flexDirection: 'row', width: '70%', height: '600px' }}>
                         <img src="/login.jpg" alt="base" width='100%' height='100%' />
                     </div>
@@ -70,7 +70,9 @@ class Login extends React.Component {
                     </div>
                 </div>
             ) : (
-                    this.goToKudos()
+                    <div>
+                        {this.goToKudos()}
+                    </div>
                 )
         );
     }

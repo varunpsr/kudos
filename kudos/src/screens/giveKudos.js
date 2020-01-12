@@ -29,6 +29,11 @@ class GiveKudos extends Component {
                 this.setState({
                     employees: data
                 });
+                if (data.length > 0) {
+                    this.setState({
+                        selected_user_id: data[0].id
+                    })
+                }
             });
     }
 
@@ -45,7 +50,7 @@ class GiveKudos extends Component {
             // });
             return employees.map((item, index) => (
                 <option key={item.id} value={item.id}>{item.full_name}</option>
-            ))
+            ));
         }
     }
 
@@ -55,6 +60,12 @@ class GiveKudos extends Component {
     }
 
     submitKudos() {
+
+        if(this.state.kudos_text == '' || this.state.kudos_text === null) {
+            alert('Please add a message to send with the Kudos.');
+            return;
+        }
+
         let headers = {
             'Authorization': 'Token ' + this.props.token
         }
@@ -68,17 +79,17 @@ class GiveKudos extends Component {
         axios.post('http://127.0.0.1:8000/kudos/', data, {
             headers: headers
         })
-        .then(response => {
-            if (response.status === 201) {
-                // this.props.history.push('/books')
-                console.log(response)
-            }
-        })
-        .catch(error => {
-            if(error.response.status === 400) {
-                alert(error.response.data.non_field_errors[0]);
-            }
-        })
+            .then(response => {
+                if (response.status === 201) {
+                    // this.props.history.push('/books')
+                    console.log(response)
+                }
+            })
+            .catch(error => {
+                if (error.response.status === 400) {
+                    alert(error.response.data.non_field_errors[0]);
+                }
+            })
         this.props.history.push('/kudos');
     }
 
@@ -87,7 +98,7 @@ class GiveKudos extends Component {
     render() {
         return (
             <div>
-                <Form>
+                <Form noValidate validated="true">
                     <Form.Group controlId="exampleForm.ControlSelect1">
                         <Form.Label>Select Employee</Form.Label>
                         <Form.Control onChange={(event) => this.setState({ selected_user_id: event.target.value })} as="select">
@@ -96,9 +107,12 @@ class GiveKudos extends Component {
                     </Form.Group>
                     <Form.Group onChange={(event) => this.setState({ kudos_text: event.target.value })} controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Kudos</Form.Label>
-                        <Form.Control as="textarea" rows="3" />
+                        <Form.Control required as="textarea" rows="3" />
+                        <Form.Control.Feedback type="invalid">
+                            Please add a message to send with the Kudos
+                        </Form.Control.Feedback>
                     </Form.Group>
-                    <Button variant="primary" onClick={this.submitKudos.bind(this)}>
+                    <Button variant="primary" onClick={() => this.submitKudos()}>
                         Submit
                     </Button>
                 </Form>

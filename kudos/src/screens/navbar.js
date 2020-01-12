@@ -52,10 +52,17 @@ class NavBar extends React.Component {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto" style={{ display: 'flex', justifyContent: 'flex-end' }}>
                         <Nav.Item>
-                            <Nav.Link href="giveKudos">
+                            <Nav.Link href="/giveKudos">
                                 <b>
                                     Give Kudos
-                        </b>
+                                </b>
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link href="/kudos/received">
+                                <b>
+                                    View Kudos
+                                </b>
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>

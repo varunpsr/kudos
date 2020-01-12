@@ -22,7 +22,7 @@ class Organization(models.Model):
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, verbose_name=_("user"), on_delete=models.CASCADE)
+    user = models.OneToOneField(User, verbose_name=_("user"), on_delete=models.CASCADE, unique=True)
     organization = models.ForeignKey(Organization, verbose_name=_("organization"), on_delete=models.CASCADE, null=False, blank=False)
 
     class Meta:

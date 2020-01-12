@@ -16,6 +16,7 @@ import Login from './screens/login';
 import Signup from './screens/signup';
 import Logout from './screens/logout';
 import NavBar from './screens/navbar';
+import ViewKudos from './screens/viewKudos';
 import giveKudos from './screens/giveKudos';
 
 import history from './history';
@@ -43,6 +44,7 @@ class App extends React.Component {
 								<Route exact path='/signup' component={Signup} />
 								<Route exact path='/logout' component={Logout} />
 								<Route exact path='/kudos' component={Kudos} />
+								<Route exact path='/kudos/received' component={ViewKudos} />
 								<Route exact path='/givekudos' component={GiveKudos} />
 							</Switch>
 						</Container>
