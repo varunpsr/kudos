@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken import views
+from accounts.views import CustomAuthToken
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path("", include('kudos.urls')),
-    path('api-token-auth/', views.obtain_auth_token, name='api-token-auth')
+    path('api-token-auth/', CustomAuthToken.as_view(), name='api-token-auth')
 ]

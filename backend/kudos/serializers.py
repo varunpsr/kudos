@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Kudos
+from accounts.serializers import UserProfileDetailSerializer
 from django.contrib.auth.models import User
+
 
 class UserListSerializer(serializers.ModelSerializer):
 
@@ -11,15 +13,21 @@ class UserListSerializer(serializers.ModelSerializer):
 
 class KudosListSerializer(serializers.ModelSerializer):
 
-    from_user = UserListSerializer()
-    to_user = UserListSerializer()
+    from_user = UserProfileDetailSerializer()
+    to_user = UserProfileDetailSerializer()
 
     class Meta:
         model = Kudos
         fields = ('id', 'body', 'from_user', 'to_user', 'created_date')
+
 
 class KudosCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Kudos
-        fields = ('id', 'body', 'from_user', 'to_user', 'created_date')
+        fields = ('body', 'from_user', 'to_user')
+
+    def validate(self, attrs):
+        instance = Kudos(**attrs)
+        instance.clean()
+        return attrs
