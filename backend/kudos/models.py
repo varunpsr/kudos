@@ -13,7 +13,7 @@ class Kudos(models.Model):
     body = models.TextField(_("body"), null=False, blank=False)
     from_user = models.ForeignKey(UserProfile, verbose_name=_("from_user"), on_delete=models.CASCADE, null=False, blank=False, related_name="kudos_from_user")
     to_user = models.ForeignKey(UserProfile, verbose_name=_("to_user"), on_delete=models.CASCADE, null=False, blank=False, related_name="kudos_to_user")
-    created_date = models.DateTimeField(_("created_date"), default=datetime.datetime.now(), editable=False)
+    created_date = models.DateTimeField(_("created_date"), default=datetime.datetime.now(), editable=True)
     modified_date = models.DateTimeField(_("modified_date"), auto_now=True)
     week_year = models.CharField(_("week_year"), max_length=6, editable=False)
 
@@ -33,6 +33,11 @@ class Kudos(models.Model):
 
     def clean(self):
         current_week_year = f"{self.created_date.isocalendar()[1]:02d}{self.created_date.isocalendar()[0]}"
+        # check users are from the same organization
+        if self.from_user.id == self.to_user.id:
+            raise ValidationError("A user can not give kudos to themselves.")
+        if self.from_user.organization.id != self.to_user.organization.id:
+            raise ValidationError("You can't give kudos across organizations.")
         # check max 3 kudos per user per week rule is not violated
         kudos = Kudos.objects.filter(week_year=current_week_year, from_user=self.from_user)
         if len(kudos) >= 3:

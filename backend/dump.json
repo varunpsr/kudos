@@ -508,6 +508,40 @@
     }
 },
 {
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$180000$2GaDZTTOwcZq$Lj/M9bXD9l+/+YcwoGYgk9vNQ3qBvrGgY75NTlHQuEs=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "somya",
+        "first_name": "Somya",
+        "last_name": "Rathore",
+        "email": "somya@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-01-12T17:57:06Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$180000$RDdXPOEcUqNm$9Y7KGtDW7a1rbaV9ANVi8qicLCvA716Awg8Q0qOQNAU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "gunjan",
+        "first_name": "Gunjan",
+        "last_name": "Malani",
+        "email": "gunjan@yahoo.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-01-12T17:58:10Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "sessions.session",
     "pk": "hzpj7awue8fxgr732w5u4tllfwtpscf2",
     "fields": {
@@ -532,6 +566,33 @@
         "name": "Recruiter Box",
         "date_created": "2020-01-10T09:03:59.871Z",
         "date_modified": "2020-01-10T09:03:59.871Z"
+    }
+},
+{
+    "model": "accounts.organization",
+    "pk": 2,
+    "fields": {
+        "name": "Google",
+        "date_created": "2020-01-12T17:57:26.131Z",
+        "date_modified": "2020-01-12T17:57:26.131Z"
+    }
+},
+{
+    "model": "accounts.organization",
+    "pk": 3,
+    "fields": {
+        "name": "Amazon",
+        "date_created": "2020-01-12T17:57:30.743Z",
+        "date_modified": "2020-01-12T17:57:30.743Z"
+    }
+},
+{
+    "model": "accounts.organization",
+    "pk": 4,
+    "fields": {
+        "name": "Rapid Circle",
+        "date_created": "2020-01-12T17:57:43.492Z",
+        "date_modified": "2020-01-12T17:57:43.492Z"
     }
 },
 {
@@ -572,6 +633,170 @@
             "shounak"
         ],
         "organization": 1
+    }
+},
+{
+    "model": "accounts.userprofile",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "somya"
+        ],
+        "organization": 2
+    }
+},
+{
+    "model": "accounts.userprofile",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "gunjan"
+        ],
+        "organization": 2
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 1,
+    "fields": {
+        "body": "Thank you Saurabh for all your help",
+        "from_user": 1,
+        "to_user": 2,
+        "created_date": "2019-07-01T17:56:00Z",
+        "modified_date": "2020-01-12T18:00:05.563Z",
+        "week_year": "272019"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 2,
+    "fields": {
+        "body": "Thank you for the quick help!",
+        "from_user": 1,
+        "to_user": 4,
+        "created_date": "2019-07-02T17:56:00Z",
+        "modified_date": "2020-01-12T18:00:45.496Z",
+        "week_year": "272019"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 3,
+    "fields": {
+        "body": "Thank you Shounak!",
+        "from_user": 1,
+        "to_user": 4,
+        "created_date": "2019-07-02T17:56:00Z",
+        "modified_date": "2020-01-12T18:01:17.018Z",
+        "week_year": "272019"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 4,
+    "fields": {
+        "body": "Thanks Salman",
+        "from_user": 1,
+        "to_user": 3,
+        "created_date": "2020-01-12T18:03:06Z",
+        "modified_date": "2020-01-12T18:04:24.786Z",
+        "week_year": "022020"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 5,
+    "fields": {
+        "body": "Couldn't have hit my timelines without your help, Saurabh!",
+        "from_user": 1,
+        "to_user": 2,
+        "created_date": "2020-01-12T06:30:00Z",
+        "modified_date": "2020-01-12T18:05:09.271Z",
+        "week_year": "022020"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 6,
+    "fields": {
+        "body": "Thanks Varun! Kudos to you!",
+        "from_user": 4,
+        "to_user": 1,
+        "created_date": "2020-01-12T12:30:00Z",
+        "modified_date": "2020-01-12T18:05:39.019Z",
+        "week_year": "022020"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 7,
+    "fields": {
+        "body": "Good Job getting the work done before time. :)",
+        "from_user": 2,
+        "to_user": 3,
+        "created_date": "2020-01-12T06:30:00Z",
+        "modified_date": "2020-01-12T18:06:46.282Z",
+        "week_year": "022020"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 8,
+    "fields": {
+        "body": "Thanks gunjan for the timely help.",
+        "from_user": 5,
+        "to_user": 6,
+        "created_date": "2020-01-12T06:30:00Z",
+        "modified_date": "2020-01-12T18:07:22.993Z",
+        "week_year": "022020"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 9,
+    "fields": {
+        "body": "Good Job last week! Kudos :)",
+        "from_user": 2,
+        "to_user": 4,
+        "created_date": "2020-01-12T00:30:00Z",
+        "modified_date": "2020-01-12T18:08:25.405Z",
+        "week_year": "022020"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 10,
+    "fields": {
+        "body": "Thank you for being an awesome mentor!",
+        "from_user": 3,
+        "to_user": 2,
+        "created_date": "2020-01-12T18:08:49Z",
+        "modified_date": "2020-01-12T18:08:51.599Z",
+        "week_year": "022020"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 11,
+    "fields": {
+        "body": "Thank you for being an awesome mentor :)",
+        "from_user": 3,
+        "to_user": 1,
+        "created_date": "2020-01-12T18:04:00Z",
+        "modified_date": "2020-01-12T18:09:27.102Z",
+        "week_year": "022020"
+    }
+},
+{
+    "model": "kudos.kudos",
+    "pk": 12,
+    "fields": {
+        "body": "Kudos Saurabh for a job well done!",
+        "from_user": 4,
+        "to_user": 2,
+        "created_date": "2020-01-12T18:04:00Z",
+        "modified_date": "2020-01-12T18:10:12.415Z",
+        "week_year": "022020"
     }
 },
 {
@@ -1058,6 +1283,402 @@
         "object_repr": "thanks, Varun",
         "action_flag": 3,
         "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2020-01-12T17:57:07.128Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "5",
+        "object_repr": "somya",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2020-01-12T17:57:17.255Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "5",
+        "object_repr": "somya",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2020-01-12T17:57:26.134Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "accounts",
+            "organization"
+        ],
+        "object_id": "2",
+        "object_repr": "Google",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2020-01-12T17:57:30.747Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "accounts",
+            "organization"
+        ],
+        "object_id": "3",
+        "object_repr": "Amazon",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2020-01-12T17:57:43.495Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "accounts",
+            "organization"
+        ],
+        "object_id": "4",
+        "object_repr": "Rapid Circle",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2020-01-12T17:57:48.611Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "accounts",
+            "userprofile"
+        ],
+        "object_id": "5",
+        "object_repr": "somya",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2020-01-12T17:58:10.605Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "6",
+        "object_repr": "gunjan",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2020-01-12T17:58:27.788Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "6",
+        "object_repr": "gunjan",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2020-01-12T17:58:36.618Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "accounts",
+            "userprofile"
+        ],
+        "object_id": "6",
+        "object_repr": "gunjan",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2020-01-12T18:00:05.565Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "1",
+        "object_repr": "Thank you Saurabh for all your help",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2020-01-12T18:00:45.498Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "2",
+        "object_repr": "Thank you for the quick help!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2020-01-12T18:01:17.023Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "3",
+        "object_repr": "Thank you Shounak!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2020-01-12T18:04:24.790Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "4",
+        "object_repr": "Thanks Salman",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2020-01-12T18:05:09.276Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "5",
+        "object_repr": "Couldn't have hit my timelines without your help, Saurabh!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2020-01-12T18:05:39.024Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "6",
+        "object_repr": "Thanks Varun! Kudos to you!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2020-01-12T18:06:46.286Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "7",
+        "object_repr": "Good Job getting the work done before time. :)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2020-01-12T18:07:22.997Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "8",
+        "object_repr": "Thanks gunjan for the timely help.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2020-01-12T18:08:25.409Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "9",
+        "object_repr": "Good Job last week! Kudos :)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2020-01-12T18:08:51.603Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "10",
+        "object_repr": "Thank you for being an awesome mentor!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2020-01-12T18:09:15.486Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "11",
+        "object_repr": "Thank you for being an awesome mentor :)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2020-01-12T18:09:27.107Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "11",
+        "object_repr": "Thank you for being an awesome mentor :)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Created_date\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2020-01-12T18:10:12.421Z",
+        "user": [
+            "varun"
+        ],
+        "content_type": [
+            "kudos",
+            "kudos"
+        ],
+        "object_id": "12",
+        "object_repr": "Kudos Saurabh for a job well done!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 }
 ]
