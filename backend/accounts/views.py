@@ -58,5 +58,6 @@ class CustomAuthToken(ObtainAuthToken):
             'token': token.key,
             'user_id': profile.pk,
             'email': user.email,
-            'name': user.get_full_name()
+            'name': user.get_full_name(),
+            'organization_name': profile.organization.name
         })

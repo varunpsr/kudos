@@ -16,7 +16,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case AUTH_UPDATED:
-            return { ...state, token: action.payload.token, user_id: action.payload.user_id, name: action.payload.name, email: action.payload.email };
+            return { ...state, token: action.payload.token, user_id: action.payload.user_id, name: action.payload.name, email: action.payload.email, organization_name: action.payload.organization_name };
         case LOGIN_SUCCESS:
             return { ...state, token: action.payload, first_name: action.payload.first_name, last_name: action.payload.last_name, organization_id: action.payload.organization_id, organization_name: action.payload.organization_name };
         case RESET_AUTHENTICATION:

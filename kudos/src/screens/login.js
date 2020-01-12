@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import axios from 'axios';
 
-import Logout from './logout';
+// import Logout from './logout';
 
 class Login extends React.Component {
     constructor(props) {
@@ -31,7 +31,11 @@ class Login extends React.Component {
         }).catch(error => {
             console.log(error);
         });
-        this.props.history.push('/books')
+        this.props.history.push('/kudos')
+    }
+
+    goToKudos() {
+        this.props.history.push('/kudos');
     }
 
     render() {
@@ -66,7 +70,7 @@ class Login extends React.Component {
                     </div>
                 </div>
             ) : (
-                    <Logout />
+                    this.goToKudos()
                 )
         );
     }

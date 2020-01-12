@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { Button, Card, CardGroup } from 'react-bootstrap';
 
-class Books extends React.Component {
+class Kudos extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -12,7 +12,7 @@ class Books extends React.Component {
         }
     }
 
-    componentDidMount() {
+    getKudos() {
         axios({
             url: "http://127.0.0.1:8000/kudos/",
             method: "get",
@@ -20,11 +20,24 @@ class Books extends React.Component {
                 'Authorization': 'Token ' + this.props.token
             }
         }).then(response => response.data)
-            .then(data => {
-                this.setState({
-                    kudos: data
-                });
+        .then(data => {
+            this.setState({
+                kudos: data
             });
+        })
+        .catch(error => {
+            console.log(error.response);
+        })
+    }
+
+    componentDidMount() {
+        this.getKudos();
+    }
+
+    componentDidUpdate(prevProps) {
+        if(this.props.token != prevProps.token) {
+            this.getKudos()
+        }
     }
 
     alldata() {
@@ -59,7 +72,7 @@ class Books extends React.Component {
                         <div style={{ display: 'flex', flexDirection: 'column', width: '50%', height: '500px', justifyContent: 'center' }}>
                             <div className='inner-content'>
                                 <h5 style={{ color: 'grey' }}> Sorry, you are not authorized to access this page. </h5>
-                                <h6 style={{ color: 'grey' }}> Please <a href='/login'> Login  </a></h6>
+                                <h6 style={{ color: 'grey' }}> Please <a href='/'> Login  </a></h6>
                             </div>
                         </div>
                     </div>
@@ -80,4 +93,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps)(Books);
+export default connect(mapStateToProps)(Kudos);

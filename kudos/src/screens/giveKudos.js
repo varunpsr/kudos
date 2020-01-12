@@ -73,8 +73,13 @@ class GiveKudos extends Component {
                 // this.props.history.push('/books')
                 console.log(response)
             }
-        });
-        this.props.history.push('/books');
+        })
+        .catch(error => {
+            if(error.response.status === 400) {
+                alert(error.response.data.non_field_errors[0]);
+            }
+        })
+        this.props.history.push('/kudos');
     }
 
 
